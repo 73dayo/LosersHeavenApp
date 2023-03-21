@@ -9,7 +9,6 @@ namespace NovelGame
     public class UserScriptManager : MonoBehaviour
     {
         [SerializeField] TextAsset _textFile;
-        [SerializeField] TextAsset _backgroundFile;
 
         //文章中の分（ここでは１行ごと）を入れておくためのリスト
         List<string> _sentences = new List<string>();
