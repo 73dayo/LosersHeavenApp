@@ -87,14 +87,14 @@ namespace NovelGame
 
             GameManager.Instance.lineNumber++;
             string statement = GameManager.Instance.userScriptManager.GetCurrentSentence();
-            if(GameManager.Instance.userScriptManager.IsStatement(statement))
+            if(GameManager.Instance.userScriptManager.IsStatement(statement)) //•¶‚ª–½—ß‚©‚Ç‚¤‚©‚ğ”»’f
             {
-                GameManager.Instance.userScriptManager.ExecuteStatement(statement);
+                GameManager.Instance.userScriptManager.ExecuteStatement(statement);//•¶‚ª–½—ß‚¾‚Á‚½‚çA–½—ß‚ğ¯•Ê•Às
                 GoToTheNextLine();
             }
         }
 
-        public void DisplayText()
+        public void DisplayText() //•¶Í‚ğ•\¦
         {
             string sentence = GameManager.Instance.userScriptManager.GetCurrentSentence();
             _mainTextObject.text = sentence;

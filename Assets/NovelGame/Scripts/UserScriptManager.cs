@@ -27,9 +27,9 @@ namespace NovelGame
         }
 
         //現在の行の文を取得する
-        public string GetCurrentSentence()
+        public string GetCurrentSentence() 
         {
-            return _sentences[GameManager.Instance.lineNumber];
+            return _sentences[GameManager.Instance.lineNumber]; //１行ずつ、テキストが入ったリストの、最新の行を返す
         }
 
         //文が命令かどうか
@@ -54,6 +54,10 @@ namespace NovelGame
 
                 case "&rmimg":
                     GameManager.Instance.imageManager.RemoveImage(words[1]);
+                    break;
+
+                case "&name":
+                    GameManager.Instance.NameTextController.DisplayName(words[1]);
                     break;
 
             }
