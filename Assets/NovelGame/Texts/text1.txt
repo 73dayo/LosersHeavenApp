@@ -1,0 +1,11 @@
+&img bg1 backgroundObject
+こんにちは！
+わたしはおいらです。
+これは例文です！
+わーい
+&img eventCG1 eventObject
+イベント画像を表示したよ
+&rmimg eventCG1
+削除したよ
+&img bg2 backgroundObject
+背景を変更したよ！
