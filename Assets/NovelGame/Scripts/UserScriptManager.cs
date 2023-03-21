@@ -60,6 +60,10 @@ namespace NovelGame
                     GameManager.Instance.NameTextController.DisplayName(words[1]);
                     break;
 
+                case "&chara":
+                    GameManager.Instance.imageManager.PutImage(words[1], words[2]).Forget();
+                    break;
+
             }
         }
 

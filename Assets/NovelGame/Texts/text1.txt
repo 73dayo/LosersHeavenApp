@@ -1,6 +1,7 @@
 &img bg1 backgroundObject
 こんにちは！
 &name おいら
+&chara おいら characterObject
 わたしはおいらです。
 これは例文です！
 わーい
@@ -10,6 +11,8 @@
 削除したよ
 &img bg2 backgroundObject
 背景を変更したよ！
+&rmimg おいら
 &name ひなぴ
+&chara ひなぴ characterObject
 ぼくはひなぴです。
 とてもげんき

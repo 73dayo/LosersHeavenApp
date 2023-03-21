@@ -33,6 +33,14 @@ MonoBehaviour:
     m_Address: eventCG2
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: bbb67f3ff30383b499e4c4b1b0db0f4d
+    m_Address: "\u304A\u3044\u3089"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: c39ee9ab1c4f9ce41b68566986ce2ce1
+    m_Address: "\u3072\u306A\u3074"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 163db7ef33e3af0459c40e553a1df73d, type: 2}
   m_SchemaSet:

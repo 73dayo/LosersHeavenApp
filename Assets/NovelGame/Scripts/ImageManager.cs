@@ -13,6 +13,7 @@ namespace NovelGame
     {
         [SerializeField] GameObject _backgroundObject;
         [SerializeField] GameObject _eventObject;
+        [SerializeField] GameObject _characterObject;
         [SerializeField] GameObject _imagePrefab;
 
 
@@ -28,6 +29,8 @@ namespace NovelGame
             _textToParentObject = new Dictionary<string, GameObject>(); //新しい辞書_textToParentObjectを作成
             _textToParentObject.Add("backgroundObject", _backgroundObject); //_textToParentObjectにオブジェクトを追加
             _textToParentObject.Add("eventObject", _eventObject); //_textToParentObjectにオブジェクトを追加
+            _textToParentObject.Add("characterObject", _characterObject);
+
             _textToSpriteObject = new Dictionary<string, GameObject>();//新しい辞書を_textToSpriteObjectを作成
 
         }
@@ -38,7 +41,7 @@ namespace NovelGame
         public async UniTaskVoid PutImage(string imageName, string parentObjectName)
         {
             var image = await Addressables.LoadAssetAsync<Sprite>(imageName);
-            //Sprite image =_textToSprite[imageName];//入力された画像を取り出す
+
             GameObject parentObject = _textToParentObject[parentObjectName];
 
             Vector2 position = new Vector2(0, 0);
