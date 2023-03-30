@@ -12,13 +12,13 @@ EditorBuildSettings:
     path: Assets/HomeScene.unity
     guid: 29f892923b08b0348a652655bbb709c3
   - enabled: 1
-    path: Assets/GameScene.unity
+    path: Assets/Scenes/GameScene.unity
     guid: 1316c17037e023142be68c9bef11c379
   - enabled: 1
-    path: Assets/ClearScene.unity
+    path: Assets/Scenes/ClearScene.unity
     guid: 10746d4afe99835489a7594760f4a885
   - enabled: 1
-    path: Assets/GameScene2.unity
+    path: Assets/Scenes/GameScene2.unity
     guid: 2b0153a5c39db254dbed7055d71f1437
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 73678056e222223478f0a70c260216c8, type: 2}
