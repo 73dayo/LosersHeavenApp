@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;//LoadSceneを使うのに必要
 
 public class PlayerController2 : MonoBehaviour
 {
+    [SerializeField] GameObject GameClear;
+
     Rigidbody2D rigid2D;
     Animator animator;
 
@@ -59,11 +61,18 @@ public class PlayerController2 : MonoBehaviour
         //プレイヤーの速度に応じてアニメーション速度を変える
         this.animator.speed = speedx / 2.0f;
 
+        if(GameClear.activeSelf==true && Input.GetMouseButton(0))
+        {
+                SceneManager.LoadScene("GameSelectScene");
+        }
+
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log("ゴール");
-        SceneManager.LoadScene("ClearScene");
+        walkForce = 0;
+        GameClear.SetActive(true);
+        //SceneManager.LoadScene("ClearScene");
     }
 }
