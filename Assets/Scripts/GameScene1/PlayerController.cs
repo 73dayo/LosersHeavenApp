@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;//LoadSceneを使うのに必要
 
-public class PlayerController : MonoBehaviour
+public sealed class PlayerController : MonoBehaviour
 {
     private Rigidbody2D rigid2D;
     private Animator animator;

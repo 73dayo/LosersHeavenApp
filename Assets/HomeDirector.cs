@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class HomeDirector : MonoBehaviour
+public sealed class HomeDirector : MonoBehaviour
 {
     // Update is called once per frame
     private void Update()

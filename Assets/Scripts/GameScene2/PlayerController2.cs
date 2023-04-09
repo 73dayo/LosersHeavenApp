@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;//LoadSceneを使うのに必要
 
-public class PlayerController2 : MonoBehaviour
+public sealed class PlayerController2 : MonoBehaviour
 {
     [SerializeField]
     private GameObject GameClear;

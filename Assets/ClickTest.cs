@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class ClickTest : MonoBehaviour
+public sealed class ClickTest : MonoBehaviour
 {
     public void ClickGameButton()
     {

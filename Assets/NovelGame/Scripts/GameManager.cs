@@ -2,7 +2,7 @@
 
 namespace NovelGame
 {
-    public class GameManager : MonoBehaviour
+    public sealed class GameManager : MonoBehaviour
     {
         //別のクラスからGameManagerの変数などを使えるようにするためのもの（変更はできない）
         public static GameManager Instance { get; private set; }

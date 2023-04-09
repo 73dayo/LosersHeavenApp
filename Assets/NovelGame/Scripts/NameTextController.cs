@@ -3,7 +3,7 @@ using TMPro;
 
 namespace NovelGame
 {
-    public class NameTextController : MonoBehaviour
+    public sealed class NameTextController : MonoBehaviour
     {
         [SerializeField]
         private TextMeshProUGUI _nameTextObject;

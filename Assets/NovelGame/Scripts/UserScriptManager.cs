@@ -4,7 +4,7 @@ using System.IO;
 
 namespace NovelGame
 {
-    public class UserScriptManager : MonoBehaviour
+    public sealed class UserScriptManager : MonoBehaviour
     {
         [SerializeField]
         private TextAsset _textFile;

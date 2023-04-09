@@ -6,7 +6,7 @@ using Cysharp.Threading.Tasks;
 
 namespace NovelGame
 {
-    public class ImageManager : MonoBehaviour
+    public sealed class ImageManager : MonoBehaviour
     {
         [SerializeField]
         private GameObject _backgroundObject;

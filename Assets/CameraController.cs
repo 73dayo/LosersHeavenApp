@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class CameraController : MonoBehaviour
+public sealed class CameraController : MonoBehaviour
 {
     private GameObject player;
 

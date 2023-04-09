@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class CollisionStartup : MonoBehaviour
+public sealed class CollisionStartup : MonoBehaviour
 {
     private Image image;
 
