@@ -1,30 +1,33 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.AddressableAssets;
-using System.Threading.Tasks;
 using Cysharp.Threading.Tasks;
 
 namespace NovelGame
 {
-
     public class ImageManager : MonoBehaviour
     {
-        [SerializeField] GameObject _backgroundObject;
-        [SerializeField] GameObject _eventObject;
-        [SerializeField] GameObject _characterObject;
-        [SerializeField] GameObject _imagePrefab;
+        [SerializeField]
+        private GameObject _backgroundObject;
 
+        [SerializeField]
+        private GameObject _eventObject;
+
+        [SerializeField]
+        private GameObject _characterObject;
+
+        [SerializeField]
+        private GameObject _imagePrefab;
 
         //テキストファイルから、文字列でSpriteやGameObjectを扱えるようにするための辞書
         //Dictionary<string, Sprite> _textToSprite;
-        Dictionary<string, GameObject> _textToParentObject;
+        private Dictionary<string, GameObject> _textToParentObject;
 
         //操作したいPrefabを指定できるようにするための辞書
-        Dictionary<string, GameObject> _textToSpriteObject;
+        private Dictionary<string, GameObject> _textToSpriteObject;
 
-        void Awake()
+        private void Awake()
         {
             _textToParentObject = new Dictionary<string, GameObject>(); //新しい辞書_textToParentObjectを作成
             _textToParentObject.Add("backgroundObject", _backgroundObject); //_textToParentObjectにオブジェクトを追加
@@ -32,10 +35,7 @@ namespace NovelGame
             _textToParentObject.Add("characterObject", _characterObject);
 
             _textToSpriteObject = new Dictionary<string, GameObject>();//新しい辞書を_textToSpriteObjectを作成
-
         }
-
-
 
         //画像を配置する
         public async UniTaskVoid PutImage(string imageName, string parentObjectName)
@@ -53,15 +53,11 @@ namespace NovelGame
             item.GetComponent<Image>().sprite = image; //ゲームオブジェクト（item）のコンポーネント？とimageをくっつける？
             _textToSpriteObject.Add(imageName, item); //辞書に追加、削除時に使用
         }
-        
 
         //画像を削除する
         public void RemoveImage(string imageName)
         {
             Destroy(_textToSpriteObject[imageName]);
         }
-
-
-
     }
 }

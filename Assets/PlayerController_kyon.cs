@@ -1,21 +1,18 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;//LoadSceneを使うのに必要
 
 public class PlayerController_kyon : MonoBehaviour
 {
-    Rigidbody2D rigid2D;
-    Animator animator;
+    private Rigidbody2D rigid2D;
+    private Animator animator;
 
-    float jumpForce = 680.0f;
+    private float jumpForce = 680.0f;
 
-    float walkForce = 30.0f;
-    float maxWalkSpeed = 2.0f;
-
+    private float walkForce = 30.0f;
+    private float maxWalkSpeed = 2.0f;
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         Application.targetFrameRate = 60;
         this.rigid2D = GetComponent<Rigidbody2D>();
@@ -23,10 +20,10 @@ public class PlayerController_kyon : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         //ジャンプ
-        if(Input.GetKeyDown(KeyCode.Space)&&(this.rigid2D.velocity.y==0))
+        if (Input.GetKeyDown(KeyCode.Space) && (this.rigid2D.velocity.y == 0))
         {
             this.rigid2D.AddForce(transform.up * this.jumpForce);
         }
@@ -40,18 +37,18 @@ public class PlayerController_kyon : MonoBehaviour
         float speedx = Mathf.Abs(this.rigid2D.velocity.x);
 
         //画面外に出た場合は最初から
-        if(transform.position.y<-10)
+        if (transform.position.y < -10)
         {
             SceneManager.LoadScene("GameScene2");
         }
 
-        if(speedx<this.maxWalkSpeed)
+        if (speedx < this.maxWalkSpeed)
         {
             this.rigid2D.AddForce(transform.right * key * this.walkForce);
         }
 
         //動く方向に応じて反転
-        if(key != 0)
+        if (key != 0)
         {
             transform.localScale = new Vector3(-key, 1, 1);
         }
@@ -60,14 +57,13 @@ public class PlayerController_kyon : MonoBehaviour
         this.animator.speed = speedx / 2.0f;
 
         //止まっているときに静止画にしたい
-        if(this.rigid2D.velocity.x == 0)
+        if (this.rigid2D.velocity.x == 0)
         {
             this.animator.SetTrigger("StopTrigger");
         }
-
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log("ゴール");
         SceneManager.LoadScene("ClearScene");

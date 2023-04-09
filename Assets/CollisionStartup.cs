@@ -3,9 +3,9 @@ using UnityEngine.UI;
 
 public class CollisionStartup : MonoBehaviour
 {
-    Image image;
+    private Image image;
 
-    void Awake()
+    private void Awake()
     {
         image = GetComponent<Image>();
         if (image != null)

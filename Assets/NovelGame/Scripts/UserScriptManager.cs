@@ -1,21 +1,19 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
-
 
 namespace NovelGame
 {
     public class UserScriptManager : MonoBehaviour
     {
-        [SerializeField] TextAsset _textFile;
+        [SerializeField]
+        private TextAsset _textFile;
 
         //文章中の分（ここでは１行ごと）を入れておくためのリスト
-        List<string> _sentences = new List<string>();
+        private List<string> _sentences = new List<string>();
 
-        void Awake()
+        private void Awake()
         {
-
             //テキストファイルの中身を、１行ずつリストに入れておく
             StringReader reader = new StringReader(_textFile.text);
 
@@ -27,7 +25,7 @@ namespace NovelGame
         }
 
         //現在の行の文を取得する
-        public string GetCurrentSentence() 
+        public string GetCurrentSentence()
         {
             return _sentences[GameManager.Instance.lineNumber]; //１行ずつ、テキストが入ったリストの、最新の行を返す
         }
@@ -63,13 +61,8 @@ namespace NovelGame
                 case "&chara":
                     GameManager.Instance.imageManager.PutImage(words[1], words[2]).Forget();
                     break;
-
             }
         }
-
-
-
-
-     }
+    }
 }
 
