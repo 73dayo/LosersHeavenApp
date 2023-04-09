@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
@@ -10,13 +10,13 @@ namespace NovelGame
     {
         [SerializeField] TextAsset _textFile;
 
-        //•¶Í’†‚Ì•ªi‚±‚±‚Å‚Í‚Ps‚²‚Æj‚ğ“ü‚ê‚Ä‚¨‚­‚½‚ß‚ÌƒŠƒXƒg
+        //æ–‡ç« ä¸­ã®åˆ†ï¼ˆã“ã“ã§ã¯ï¼‘è¡Œã”ã¨ï¼‰ã‚’å…¥ã‚Œã¦ãŠããŸã‚ã®ãƒªã‚¹ãƒˆ
         List<string> _sentences = new List<string>();
 
         void Awake()
         {
 
-            //ƒeƒLƒXƒgƒtƒ@ƒCƒ‹‚Ì’†g‚ğA‚Ps‚¸‚ÂƒŠƒXƒg‚É“ü‚ê‚Ä‚¨‚­
+            //ãƒ†ã‚­ã‚¹ãƒˆãƒ•ã‚¡ã‚¤ãƒ«ã®ä¸­èº«ã‚’ã€ï¼‘è¡Œãšã¤ãƒªã‚¹ãƒˆã«å…¥ã‚Œã¦ãŠã
             StringReader reader = new StringReader(_textFile.text);
 
             while (reader.Peek() != -1)
@@ -26,13 +26,13 @@ namespace NovelGame
             }
         }
 
-        //Œ»İ‚Ìs‚Ì•¶‚ğæ“¾‚·‚é
+        //ç¾åœ¨ã®è¡Œã®æ–‡ã‚’å–å¾—ã™ã‚‹
         public string GetCurrentSentence() 
         {
-            return _sentences[GameManager.Instance.lineNumber]; //‚Ps‚¸‚ÂAƒeƒLƒXƒg‚ª“ü‚Á‚½ƒŠƒXƒg‚ÌAÅV‚Ìs‚ğ•Ô‚·
+            return _sentences[GameManager.Instance.lineNumber]; //ï¼‘è¡Œãšã¤ã€ãƒ†ã‚­ã‚¹ãƒˆãŒå…¥ã£ãŸãƒªã‚¹ãƒˆã®ã€æœ€æ–°ã®è¡Œã‚’è¿”ã™
         }
 
-        //•¶‚ª–½—ß‚©‚Ç‚¤‚©
+        //æ–‡ãŒå‘½ä»¤ã‹ã©ã†ã‹
         public bool IsStatement(string sentence)
         {
             if (sentence[0] == '&')
@@ -42,7 +42,7 @@ namespace NovelGame
             return false;
         }
 
-        //–½—ß‚ğÀs‚·‚é
+        //å‘½ä»¤ã‚’å®Ÿè¡Œã™ã‚‹
         public void ExecuteStatement(string sentence)
         {
             string[] words = sentence.Split(' ');

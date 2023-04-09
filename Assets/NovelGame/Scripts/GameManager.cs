@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,7 +6,7 @@ namespace NovelGame
 {
     public class GameManager : MonoBehaviour
     {
-        //•Ê‚ÌƒNƒ‰ƒX‚©‚çGameManager‚Ì•Ï”‚È‚Ç‚ğg‚¦‚é‚æ‚¤‚É‚·‚é‚½‚ß‚Ì‚à‚Ìi•ÏX‚Í‚Å‚«‚È‚¢j
+        //åˆ¥ã®ã‚¯ãƒ©ã‚¹ã‹ã‚‰GameManagerã®å¤‰æ•°ãªã©ã‚’ä½¿ãˆã‚‹ã‚ˆã†ã«ã™ã‚‹ãŸã‚ã®ã‚‚ã®ï¼ˆå¤‰æ›´ã¯ã§ããªã„ï¼‰
         public static GameManager Instance{get; private set;}
 
         public UserScriptManager userScriptManager;
@@ -14,13 +14,13 @@ namespace NovelGame
         public NameTextController NameTextController;
         public ImageManager imageManager;
 
-        //ƒ†[ƒU[ƒXƒNƒŠƒvƒg‚ÌA¡‚Ìs‚Ì”’lBƒNƒŠƒbƒNiƒ^ƒbƒvj‚Ì‚½‚Ñ‚É‚P‚¸‚Â‘‚¦‚éB
+        //ãƒ¦ãƒ¼ã‚¶ãƒ¼ã‚¹ã‚¯ãƒªãƒ—ãƒˆã®ã€ä»Šã®è¡Œã®æ•°å€¤ã€‚ã‚¯ãƒªãƒƒã‚¯ï¼ˆã‚¿ãƒƒãƒ—ï¼‰ã®ãŸã³ã«ï¼‘ãšã¤å¢—ãˆã‚‹ã€‚
         [System.NonSerialized] public int lineNumber;
     
         // Update is called once per frame
         void Awake()
         {
-            //•Ê‚ÌƒNƒ‰ƒX‚©‚çGameManager‚Ì•Ï”‚È‚Ç‚ğg‚¦‚é‚æ‚¤‚É‚È‚éH
+            //åˆ¥ã®ã‚¯ãƒ©ã‚¹ã‹ã‚‰GameManagerã®å¤‰æ•°ãªã©ã‚’ä½¿ãˆã‚‹ã‚ˆã†ã«ãªã‚‹ï¼Ÿ
             Instance = this;
 
             lineNumber = 0;

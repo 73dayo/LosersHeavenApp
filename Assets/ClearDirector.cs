@@ -1,7 +1,7 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;//LoadScene‚ğg‚¤‚½‚ß‚É•K—vI
+using UnityEngine.SceneManagement;//LoadSceneã‚’ä½¿ã†ãŸã‚ã«å¿…è¦ï¼
 
 public class ClearDirector : MonoBehaviour
 {

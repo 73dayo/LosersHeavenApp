@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class GameSelectButton : MonoBehaviour
 {
-    // ƒ{ƒ^ƒ“‚ª‰Ÿ‚³‚ê‚½ê‡A¡‰ñŒÄ‚Ño‚³‚ê‚éŠÖ”
+    // ãƒœã‚¿ãƒ³ãŒæŠ¼ã•ã‚ŒãŸå ´åˆã€ä»Šå›å‘¼ã³å‡ºã•ã‚Œã‚‹é–¢æ•°
     public void OnClick1()
     {
         SceneManager.LoadSceneAsync("GameScene2");

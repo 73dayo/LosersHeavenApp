@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;//LoadScene‚ğg‚¤‚Ì‚É•K—v
+using UnityEngine.SceneManagement;//LoadSceneã‚’ä½¿ã†ã®ã«å¿…è¦
 
 public class PlayerController2 : MonoBehaviour
 {
@@ -27,21 +27,21 @@ public class PlayerController2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //ƒWƒƒƒ“ƒv
+        //ã‚¸ãƒ£ãƒ³ãƒ—
         if(Input.GetKeyDown(KeyCode.Space)&&(this.rigid2D.velocity.y==0))
         {
             this.rigid2D.AddForce(transform.up * this.jumpForce);
         }
 
-        //¶‰EˆÚ“®
+        //å·¦å³ç§»å‹•
         int key = 0;
         if (Input.GetKey(KeyCode.RightArrow)) key = 1;
         if (Input.GetKey(KeyCode.LeftArrow)) key = -1;
 
-        //ƒvƒŒƒCƒ„‚Ì‘¬“x
+        //ãƒ—ãƒ¬ã‚¤ãƒ¤ã®é€Ÿåº¦
         float speedx = Mathf.Abs(this.rigid2D.velocity.x);
 
-        //‰æ–ÊŠO‚Éo‚½ê‡‚ÍÅ‰‚©‚ç
+        //ç”»é¢å¤–ã«å‡ºãŸå ´åˆã¯æœ€åˆã‹ã‚‰
         if(transform.position.y<-10)
         {
             SceneManager.LoadScene("GameScene2");
@@ -52,13 +52,13 @@ public class PlayerController2 : MonoBehaviour
             this.rigid2D.AddForce(transform.right * key * this.walkForce);
         }
 
-        //“®‚­•ûŒü‚É‰‚¶‚Ä”½“]
+        //å‹•ãæ–¹å‘ã«å¿œã˜ã¦åè»¢
         if(key != 0)
         {
             transform.localScale = new Vector3(-key, 1, 1);
         }
 
-        //ƒvƒŒƒCƒ„[‚Ì‘¬“x‚É‰‚¶‚ÄƒAƒjƒ[ƒVƒ‡ƒ“‘¬“x‚ğ•Ï‚¦‚é
+        //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®é€Ÿåº¦ã«å¿œã˜ã¦ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³é€Ÿåº¦ã‚’å¤‰ãˆã‚‹
         this.animator.speed = speedx / 2.0f;
 
         if(GameClear.activeSelf==true && Input.GetMouseButton(0))
@@ -70,7 +70,7 @@ public class PlayerController2 : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("ƒS[ƒ‹");
+        Debug.Log("ã‚´ãƒ¼ãƒ«");
         walkForce = 0;
         GameClear.SetActive(true);
         //SceneManager.LoadScene("ClearScene");

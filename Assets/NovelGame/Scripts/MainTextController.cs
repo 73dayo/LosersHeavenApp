@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
@@ -11,7 +11,7 @@ namespace NovelGame
 
         [SerializeField] TextMeshProUGUI _mainTextObject;
 
-        //•¶š‚ğ‚P•¶š‚¸‚Â•\¦‚·‚é‚½‚ß‚Ì‚â‚Â
+        //æ–‡å­—ã‚’ï¼‘æ–‡å­—ãšã¤è¡¨ç¤ºã™ã‚‹ãŸã‚ã®ã‚„ã¤
         int _displayedSentenceLength;
         int _sentenceLength;
         float _time;
@@ -24,11 +24,11 @@ namespace NovelGame
             _feedTime = 0.05f;
 
 
-            //Å‰‚Ìs‚ÌƒeƒLƒXƒg‚ğ•\¦A‚Ü‚½‚Í–½—ß‚ğÀs
+            //æœ€åˆã®è¡Œã®ãƒ†ã‚­ã‚¹ãƒˆã‚’è¡¨ç¤ºã€ã¾ãŸã¯å‘½ä»¤ã‚’å®Ÿè¡Œ
             string statement = GameManager.Instance.userScriptManager.GetCurrentSentence();
-            if(GameManager.Instance.userScriptManager.IsStatement(statement)) //æ“¾‚µ‚½•¶š‚ª"&"‚Ì‚Æ‚«
+            if(GameManager.Instance.userScriptManager.IsStatement(statement)) //å–å¾—ã—ãŸæ–‡å­—ãŒ"&"ã®ã¨ã
             {
-                GameManager.Instance.userScriptManager.ExecuteStatement(statement); //‰æ‘œ‚ğ”z’u‚·‚é
+                GameManager.Instance.userScriptManager.ExecuteStatement(statement); //ç”»åƒã‚’é…ç½®ã™ã‚‹
                 GoToTheNextLine();
             }
 
@@ -39,7 +39,7 @@ namespace NovelGame
         void Update()
         {
 
-            //•¶Í‚ğ‚P•¶š‚¸‚Â•\¦‚·‚é
+            //æ–‡ç« ã‚’ï¼‘æ–‡å­—ãšã¤è¡¨ç¤ºã™ã‚‹
             _time += Time.deltaTime;
             if(_time>=_feedTime)
             {
@@ -53,7 +53,7 @@ namespace NovelGame
             }
 
 
-            //ƒNƒŠƒbƒN‚³‚ê‚½‚Æ‚«AŸ‚Ìs‚ÖˆÚ“®
+            //ã‚¯ãƒªãƒƒã‚¯ã•ã‚ŒãŸã¨ãã€æ¬¡ã®è¡Œã¸ç§»å‹•
             if(Input.GetMouseButtonUp(0))
             {
                 if (CanGoToTheNextLine())
@@ -69,7 +69,7 @@ namespace NovelGame
         }
 
 
-        //‚»‚Ìs‚ÌA‚·‚×‚Ä‚Ì•¶š‚ª•\¦‚³‚ê‚Ä‚¢‚È‚¯‚ê‚ÎA‚Ü‚¾Ÿ‚Ìs‚Öi‚Ş‚±‚Æ‚Í‚Å‚«‚È‚¢
+        //ãã®è¡Œã®ã€ã™ã¹ã¦ã®æ–‡å­—ãŒè¡¨ç¤ºã•ã‚Œã¦ã„ãªã‘ã‚Œã°ã€ã¾ã æ¬¡ã®è¡Œã¸é€²ã‚€ã“ã¨ã¯ã§ããªã„
         public bool CanGoToTheNextLine()
         {
             string sentence = GameManager.Instance.userScriptManager.GetCurrentSentence();
@@ -77,7 +77,7 @@ namespace NovelGame
         }
 
 
-        //ƒVƒiƒŠƒIAŸ‚Ìs‚ÖˆÚ“®
+        //ã‚·ãƒŠãƒªã‚ªã€æ¬¡ã®è¡Œã¸ç§»å‹•
         public void GoToTheNextLine()
         {
 
@@ -87,14 +87,14 @@ namespace NovelGame
 
             GameManager.Instance.lineNumber++;
             string statement = GameManager.Instance.userScriptManager.GetCurrentSentence();
-            if(GameManager.Instance.userScriptManager.IsStatement(statement)) //•¶‚ª–½—ß‚©‚Ç‚¤‚©‚ğ”»’f
+            if(GameManager.Instance.userScriptManager.IsStatement(statement)) //æ–‡ãŒå‘½ä»¤ã‹ã©ã†ã‹ã‚’åˆ¤æ–­
             {
-                GameManager.Instance.userScriptManager.ExecuteStatement(statement);//•¶‚ª–½—ß‚¾‚Á‚½‚çA–½—ß‚ğ¯•Ê•Às
+                GameManager.Instance.userScriptManager.ExecuteStatement(statement);//æ–‡ãŒå‘½ä»¤ã ã£ãŸã‚‰ã€å‘½ä»¤ã‚’è­˜åˆ¥ï¼†å®Ÿè¡Œ
                 GoToTheNextLine();
             }
         }
 
-        public void DisplayText() //•¶Í‚ğ•\¦
+        public void DisplayText() //æ–‡ç« ã‚’è¡¨ç¤º
         {
             string sentence = GameManager.Instance.userScriptManager.GetCurrentSentence();
             _mainTextObject.text = sentence;

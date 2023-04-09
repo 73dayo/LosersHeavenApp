@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -17,45 +17,45 @@ namespace NovelGame
         [SerializeField] GameObject _imagePrefab;
 
 
-        //ƒeƒLƒXƒgƒtƒ@ƒCƒ‹‚©‚çA•¶š—ñ‚ÅSprite‚âGameObject‚ğˆµ‚¦‚é‚æ‚¤‚É‚·‚é‚½‚ß‚Ì«‘
+        //ãƒ†ã‚­ã‚¹ãƒˆãƒ•ã‚¡ã‚¤ãƒ«ã‹ã‚‰ã€æ–‡å­—åˆ—ã§Spriteã‚„GameObjectã‚’æ‰±ãˆã‚‹ã‚ˆã†ã«ã™ã‚‹ãŸã‚ã®è¾æ›¸
         //Dictionary<string, Sprite> _textToSprite;
         Dictionary<string, GameObject> _textToParentObject;
 
-        //‘€ì‚µ‚½‚¢Prefab‚ğw’è‚Å‚«‚é‚æ‚¤‚É‚·‚é‚½‚ß‚Ì«‘
+        //æ“ä½œã—ãŸã„Prefabã‚’æŒ‡å®šã§ãã‚‹ã‚ˆã†ã«ã™ã‚‹ãŸã‚ã®è¾æ›¸
         Dictionary<string, GameObject> _textToSpriteObject;
 
         void Awake()
         {
-            _textToParentObject = new Dictionary<string, GameObject>(); //V‚µ‚¢«‘_textToParentObject‚ğì¬
-            _textToParentObject.Add("backgroundObject", _backgroundObject); //_textToParentObject‚ÉƒIƒuƒWƒFƒNƒg‚ğ’Ç‰Á
-            _textToParentObject.Add("eventObject", _eventObject); //_textToParentObject‚ÉƒIƒuƒWƒFƒNƒg‚ğ’Ç‰Á
+            _textToParentObject = new Dictionary<string, GameObject>(); //æ–°ã—ã„è¾æ›¸_textToParentObjectã‚’ä½œæˆ
+            _textToParentObject.Add("backgroundObject", _backgroundObject); //_textToParentObjectã«ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’è¿½åŠ 
+            _textToParentObject.Add("eventObject", _eventObject); //_textToParentObjectã«ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’è¿½åŠ 
             _textToParentObject.Add("characterObject", _characterObject);
 
-            _textToSpriteObject = new Dictionary<string, GameObject>();//V‚µ‚¢«‘‚ğ_textToSpriteObject‚ğì¬
+            _textToSpriteObject = new Dictionary<string, GameObject>();//æ–°ã—ã„è¾æ›¸ã‚’_textToSpriteObjectã‚’ä½œæˆ
 
         }
 
 
 
-        //‰æ‘œ‚ğ”z’u‚·‚é
+        //ç”»åƒã‚’é…ç½®ã™ã‚‹
         public async UniTaskVoid PutImage(string imageName, string parentObjectName)
         {
-            var image = await Addressables.LoadAssetAsync<Sprite>(imageName);//‰æ‘œ‚ğ“Ç‚İ‚Ş
+            var image = await Addressables.LoadAssetAsync<Sprite>(imageName);//ç”»åƒã‚’èª­ã¿è¾¼ã‚€
 
-            GameObject parentObject = _textToParentObject[parentObjectName]; //eƒIƒuƒWƒFƒNƒg
+            GameObject parentObject = _textToParentObject[parentObjectName]; //è¦ªã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
 
-            Vector2 position = new Vector2(0, 0); //2D‚ÌƒxƒNƒ^[‚ğì¬
-            Quaternion rotation = Quaternion.identity; //‰ñ“]‚ğì¬A.identity‚Í‰ñ“]‚µ‚Ä‚¢‚È‚¢‚Æ‚¢‚¤ˆÓ–¡H
-            Transform parent = parentObject.transform; //ˆÚ“®‚ğì¬
+            Vector2 position = new Vector2(0, 0); //2Dã®ãƒ™ã‚¯ã‚¿ãƒ¼ã‚’ä½œæˆ
+            Quaternion rotation = Quaternion.identity; //å›è»¢ã‚’ä½œæˆã€.identityã¯å›è»¢ã—ã¦ã„ãªã„ã¨ã„ã†æ„å‘³ï¼Ÿ
+            Transform parent = parentObject.transform; //ç§»å‹•ã‚’ä½œæˆ
 
-            GameObject item = Instantiate(_imagePrefab, position, rotation, parent); //ƒIƒuƒWƒFƒNƒg‚ğ¶¬‚·‚é
+            GameObject item = Instantiate(_imagePrefab, position, rotation, parent); //ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’ç”Ÿæˆã™ã‚‹
 
-            item.GetComponent<Image>().sprite = image; //ƒQ[ƒ€ƒIƒuƒWƒFƒNƒgiitemj‚ÌƒRƒ“ƒ|[ƒlƒ“ƒgH‚Æimage‚ğ‚­‚Á‚Â‚¯‚éH
-            _textToSpriteObject.Add(imageName, item); //«‘‚É’Ç‰ÁAíœ‚Ég—p
+            item.GetComponent<Image>().sprite = image; //ã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆï¼ˆitemï¼‰ã®ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆï¼Ÿã¨imageã‚’ãã£ã¤ã‘ã‚‹ï¼Ÿ
+            _textToSpriteObject.Add(imageName, item); //è¾æ›¸ã«è¿½åŠ ã€å‰Šé™¤æ™‚ã«ä½¿ç”¨
         }
         
 
-        //‰æ‘œ‚ğíœ‚·‚é
+        //ç”»åƒã‚’å‰Šé™¤ã™ã‚‹
         public void RemoveImage(string imageName)
         {
             Destroy(_textToSpriteObject[imageName]);
