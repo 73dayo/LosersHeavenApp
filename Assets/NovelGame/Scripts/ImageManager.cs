@@ -40,18 +40,20 @@ namespace NovelGame
         //画像を配置する
         public async UniTaskVoid PutImage(string imageName, string parentObjectName)
         {
-            var image = await Addressables.LoadAssetAsync<Sprite>(imageName);//画像を読み込む
+            //画像を読み込む
+            var image = await Addressables.LoadAssetAsync<Sprite>(imageName);
 
-            GameObject parentObject = _textToParentObject[parentObjectName]; //親オブジェクト
+            // 親オブジェクトのTransformを取得する
+            var parent = _textToParentObject[parentObjectName].transform;
 
-            Vector2 position = new Vector2(0, 0); //2Dのベクターを作成
-            Quaternion rotation = Quaternion.identity; //回転を作成、.identityは回転していないという意味？
-            Transform parent = parentObject.transform; //移動を作成
+            // オブジェクトを生成する
+            var item = Instantiate(_imagePrefab, Vector2.zero, Quaternion.identity, parent);
 
-            GameObject item = Instantiate(_imagePrefab, position, rotation, parent); //オブジェクトを生成する
+            // ゲームオブジェクト（item）のImageコンポーネントのspriteパラメータをとimageに設定する
+            item.GetComponent<Image>().sprite = image;
 
-            item.GetComponent<Image>().sprite = image; //ゲームオブジェクト（item）のコンポーネント？とimageをくっつける？
-            _textToSpriteObject.Add(imageName, item); //辞書に追加、削除時に使用
+            //辞書に追加、削除時に使用
+            _textToSpriteObject.Add(imageName, item);
         }
 
         //画像を削除する
