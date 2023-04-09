@@ -12,13 +12,12 @@ namespace NovelGame
         private int _displayedSentenceLength;
         private int _sentenceLength;
         private float _time;
-        private float _feedTime;
+        private const float FeedTime = 0.05f;
 
         // Start is called before the first frame update
         private void Start()
         {
             _time = 0f;
-            _feedTime = 0.05f;
 
             //最初の行のテキストを表示、または命令を実行
             string statement = GameManager.Instance.userScriptManager.GetCurrentSentence();
@@ -36,9 +35,9 @@ namespace NovelGame
         {
             //文章を１文字ずつ表示する
             _time += Time.deltaTime;
-            if (_time >= _feedTime)
+            if (_time >= FeedTime)
             {
-                _time -= _feedTime;
+                _time -= FeedTime;
 
                 if (!CanGoToTheNextLine())
                 {
