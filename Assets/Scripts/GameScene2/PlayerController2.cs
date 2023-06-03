@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;//LoadSceneを使うのに必要
 
 public sealed class PlayerController2 : MonoBehaviour
@@ -33,8 +33,11 @@ public sealed class PlayerController2 : MonoBehaviour
 
         //左右移動
         int key = 0;
-        if (Input.GetKey(KeyCode.RightArrow)) key = 1;
-        if (Input.GetKey(KeyCode.LeftArrow)) key = -1;
+        //if (Input.GetKey(KeyCode.RightArrow)) key = 1;
+        if (Input.GetMouseButton(0) == true && Input.mousePosition.x >= Screen.width / 2) key = 1;
+
+        //if (Input.GetKey(KeyCode.LeftArrow)) key = -1;
+        if (Input.GetMouseButton(0) == true && Input.mousePosition.x <= Screen.width / 2) key = -1;
 
         //プレイヤの速度
         float speedx = Mathf.Abs(this.rigid2D.velocity.x);
